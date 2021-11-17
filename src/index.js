@@ -6,14 +6,26 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 
-ReactDOM.render(
+// ReactDOM.render(
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<App />}>
+//           <Route path="expenses" element={<Expenses />} />
+//           <Route path="invoices" element={<Invoices />} />
+//         </Route>
+//       </Routes>
+//     </BrowserRouter>, 
+//     document.getElementById('root')
+//   );
+  ReactDOM.render(
     <BrowserRouter>
-      <App/>
-    </BrowserRouter>,
+     <App />
+    </BrowserRouter>, 
     document.getElementById('root')
   );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+

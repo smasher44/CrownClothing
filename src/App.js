@@ -4,23 +4,32 @@ import HomePage from './pages/homepage/Homepage';
 import { Route, Routes } from 'react-router-dom';
 
 
-const HatsPage = () => {
-  <div>
-    <h1>HATS PAGE</h1>
-  </div>
-}
+const HatsPage = () => (
+    <div>
+      <h1>HATS PAGE</h1>
+    </div>
+)
+   
 
 //Route- Declares an element that should be rendered at a certain URL path
 
 const App = () => (
-  <div>
     <Routes>
-      <Route path='/' component={HomePage} />
-      {/* <Route exact path='/' component={HomePage} />
-      <Route exact path='/hats' component={HatsPage} /> */}
-      {/* <HomePage/> */}
+          <Route path="/" element={<HomePage/>}>
+              <Route path="/" element={<HatsPage/>} />
+          </Route>
     </Routes>
-  </div>
 )
 
 export default App;
+// ReactDOM.render(
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<App />}>
+//           <Route path="expenses" element={<Expenses />} />
+//           <Route path="invoices" element={<Invoices />} />
+//         </Route>
+//       </Routes>
+//     </BrowserRouter>, 
+//     document.getElementById('root')
+//   );

@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 const HatsPage = () => (
     <div>
       <h1>HATS PAGE</h1>
+      <p>Testing page</p>
     </div>
 )
    

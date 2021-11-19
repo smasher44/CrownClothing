@@ -12,14 +12,15 @@ class Directory extends Component {
     }
 
     render() {
+        const {sections} = this.state;
         return(
             <div className='directory-menu'>
-                {this.state.sections.map( (item) => (
-                    <MenuItem key={item.id} 
-                              title={item.title} 
-                              imageUrl={item.imageUrl} 
-                              size={item.size}  
-                              />
+                {sections.map( ({id,title,imageUrl,size}) => (
+                    <MenuItem key={id} 
+                              title={title} 
+                              imageUrl={imageUrl} 
+                              size={size}  
+                    />
                 ))}
             </div>
         )

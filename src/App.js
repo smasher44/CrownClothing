@@ -5,7 +5,8 @@ import ShopPage from './pages/shop/shop.mainpage';
 import Header from './components/header/header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import { Route, Routes } from 'react-router-dom';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { onSnapshot } from "firebase/firestore";
 
 class App extends Component {
     constructor(props) {
@@ -16,12 +17,30 @@ class App extends Component {
     }
     
     unsubscribeFromAuth = null;
+    //createUserProfileDocument(user);
+    //this.setState({ currentUser: user});
+    //console.log(user)
 
     componentDidMount() {
-      this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-        this.setState({ currentUser: user});
-        console.log(user)
-      })
+      this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
+        if(userAuth) {
+          const userRef = await createUserProfileDocument(userAuth);
+          //console.log(userRef);
+          //userRef.onSnapshot(snapShot => {
+          //   console.log('snapShot 2',snapShot);
+          //});
+          onSnapshot(userRef, snapShot => {
+            this.setState({
+              currentUser: {
+                id: snapShot.id,
+                ...snapShot.data()
+              }
+            });
+          });
+        } else {
+          this.setState({currentUser: userAuth})
+        }
+      });
     }
 
     componentWillUnmount() {
@@ -41,15 +60,6 @@ class App extends Component {
     )
   }
 }
-// const App = () => (
-//     <div>
-//         <Header/>
-//         <Routes>
-//             <Route path='/' element={<HomePage/>} />
-//             <Route path='/shop' element={<ShopPage/>}/>
-//             <Route path='/signin' element={<SignInAndSignUpPage/>}/>
-//         </Routes>
-//     </div>
-// )
+
 
 export default App;

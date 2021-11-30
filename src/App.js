@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import HomePage from './pages/homepage/Homepage';
+import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shop.mainpage';
 import Header from './components/header/header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
@@ -52,14 +52,25 @@ class App extends Component {
       <div>
         <Header currentUser={this.state.currentUser}/>
         <Routes>
-          <Route path='/' element={<HomePage/>} />
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/shop/hats' element={<HatsPage/>}/>
           <Route path='/shop' element={<ShopPage/>}/>
           <Route path='/signin' element={<SignInAndSignUpPage/>}/>
         </Routes>
-      </div>
+      </div> 
     )
   }
 }
+
+const HatsPage = () => (
+  <div>
+    <div>
+      <h1>HATSPAGE</h1>
+      <span>for testing</span>
+    </div>
+  </div>
+)
+  
 
 
 export default App;

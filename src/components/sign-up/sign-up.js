@@ -10,7 +10,6 @@ import './sign-up.scss';
 class SignUp extends Component {
   constructor(){
     super();
-
     this.state = {
       displayName: '',
       email: '',
@@ -27,21 +26,17 @@ class SignUp extends Component {
       return;
     }
     try {
-      const { user } = await createUserWithEmailAndPassword(auth, email, password);
-
-      await createUserProfileDocument(user, {displayName});
-      
+      const { user } = await createUserWithEmailAndPassword(auth, email, password);   
+      await createUserProfileDocument(user, { displayName });
       this.setState({
         displayName:'',
         email:'',
         password:'',
         confirmPassword:''
       })
-
     } catch (error) {
       console.error(error);
     }
-
   }
 
   handleChange = event => {

@@ -4,41 +4,31 @@ import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shop.mainpage';
 import Header from './components/header/header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
+import CheckoutPage from './pages/checkout/checkout';
 import { Route, Routes } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { onSnapshot } from "firebase/firestore";
+import { connect } from 'react-redux';
+import { setCurrentUser } from './redux/user/user.actions';
 
 class App extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        currentUser: null
-      }  
-    }
-    
     unsubscribeFromAuth = null;
-    //createUserProfileDocument(user);
-    //this.setState({ currentUser: user});
-    //console.log(user)
-
+    
     componentDidMount() {
+      const { setCurrentUser } = this.props;
       this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
         if(userAuth) {
           const userRef = await createUserProfileDocument(userAuth);
-          //console.log(userRef);
-          //userRef.onSnapshot(snapShot => {
-          //   console.log('snapShot 2',snapShot);
-          //});
           onSnapshot(userRef, snapShot => {
-            this.setState({
-              currentUser: {
+            setCurrentUser({
                 id: snapShot.id,
-                ...snapShot.data()
-              }
+                ...snapShot.data() /* data here is in reference to all 
+                parameters we set in the firestore database (displayName,
+                email,createdAt,...etc) */
             });
           });
         } else {
-          this.setState({currentUser: userAuth})
+          setCurrentUser(userAuth);
         }
       });
     }
@@ -50,12 +40,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser}/>
+        <Header/>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/shop/hats' element={<HatsPage/>}/>
           <Route path='/shop' element={<ShopPage/>}/>
           <Route path='/signin' element={<SignInAndSignUpPage/>}/>
+          <Route path='/checkout' element={<CheckoutPage/>}/>
         </Routes>
       </div> 
     )
@@ -71,6 +62,12 @@ const HatsPage = () => (
   </div>
 )
   
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+})
 
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+})
 
-export default App;
+export default connect(mapStateToProps,mapDispatchToProps)(App);

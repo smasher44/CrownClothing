@@ -14,14 +14,15 @@ const firebaseConfig = { // these properties are given by the firebase
 }
 
 const firebase = initializeApp( firebaseConfig ); // initialization
+export const auth = getAuth(firebase);
+export const firestore = getFirestore(firebase);
 
 export const createUserProfileDocument = async ( userAuth, additionalData ) => {
-  if (!userAuth) return;
+  if (!userAuth) return; // if userAuth is null you get out with this function
   //console.log('useAuth',userAuth)
   const userRef = doc(firestore,`users/${userAuth.uid}`);
   const snapShot = await getDoc(userRef);
   //console.log('snapShot', snapShot)
-
   if(!snapShot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -32,24 +33,13 @@ export const createUserProfileDocument = async ( userAuth, additionalData ) => {
       console.log('error creating user', error.message);
     }
   }
-
   return userRef;
 };
 
-//const doc = doc(firestore, '')
-//const collection = collection(firestore,'/users');
-
-
-// neglect below FTMT
-export const auth = getAuth(firebase);
-export const firestore = getFirestore(firebase);
-
 const provider = new GoogleAuthProvider();
-
 provider.setCustomParameters({
   // 'login_hint': 'user@example.com'
    prompt: 'select_account'
-  
 });
 
 export const signInWithGoogle = () => signInWithPopup(auth, provider)
@@ -72,30 +62,5 @@ export const signInWithGoogle = () => signInWithPopup(auth, provider)
   // });
 
   export default firebase;
-
-
-
-
-// old codes
-// provider.setCustomParameters({ prompt: 'select_account'});
-// export const signInWithGoogle = () => signInWithPopup(provider);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

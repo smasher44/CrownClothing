@@ -1,3 +1,3 @@
 # CrownClothing
 E-Commerce App
-Recently did major changes in the react-routing 
+Recently did minon changes in the react-routing 

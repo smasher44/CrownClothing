@@ -5,10 +5,10 @@ import Directory from '../../components/directory/directory' ;
 
 
 const HomePage = () => (
-    <div className='homepage'>
-        <Directory/>
-        {/* <Outlet/> */}
-    </div>
+  <div className='homepage'>
+    <Directory/>
+    {/* <Outlet/> */}
+  </div>
 )
 export default HomePage;
 

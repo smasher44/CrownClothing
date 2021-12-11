@@ -5,6 +5,7 @@ import ShopPage from './pages/shop/shop.mainpage';
 import Header from './components/header/header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import CheckoutPage from './pages/checkout/checkout';
+import CollectionPage from './pages/collection/collection';
 import { Route, Routes } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { onSnapshot } from "firebase/firestore";
@@ -45,26 +46,18 @@ class App extends Component {
         <Header/>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
-          <Route path='/shop/hats' element={<HatsPage/>}/>
           <Route path='/shop' element={<ShopPage/>}/>
+          <Route path='/shop/:category' element={<CollectionPage/>}/>
           <Route path='/signin' element={<SignInAndSignUpPage/>}/>
           <Route path='/checkout' element={<CheckoutPage/>}/>
+          <Route path="*" element={ <main style={{ padding: "1rem" }}><p>There's nothing here!</p></main>}/>
         </Routes>
       </div> 
     )
   }
 }
 
-// this code is for testing
-const HatsPage = () => (
-  <div>
-    <div>
-      <h1>HATSPAGE</h1>
-      <span>for testing</span>
-    </div>
-  </div>
-)
-  
+ 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 })
@@ -74,3 +67,16 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+
+
+// this code is for testing
+// const HatsPage = () => (
+//   <div>
+//     <div>
+//       <h1>HATSPAGE</h1>
+//       <span>for testing</span>
+//     </div>
+//   </div>
+// )
+

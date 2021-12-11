@@ -1,11 +1,13 @@
 import React from 'react';
 import './collection-preview.scss';
 import CollectionItem from '../collection-item/collection-item';
+import { useNavigate } from "react-router-dom";
 
-
-const CollectionPreview = ({title, items}) => (
+const CollectionPreview = ({title,routeName, items}) => {
+  const navigate = useNavigate();
+  return (
   <div className='collection-preview'>
-    <h1 className='title'>{title.toUpperCase()}</h1>
+    <h1 className='title' onClick={() => navigate(`/shop/${routeName}`)}>{title.toUpperCase()}</h1>
     <div className='preview'>
         {items.filter((item, idx) => idx < 4 )
               .map((item) => ( 
@@ -14,6 +16,9 @@ const CollectionPreview = ({title, items}) => (
         ))}
     </div>
   </div>
-)
+  )
+}
+  
+
 
 export default CollectionPreview;

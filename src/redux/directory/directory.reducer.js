@@ -1,6 +1,5 @@
-/* Used as starting data for Directory */
-
-export const SECTIONS_DATA = [
+const INITIAL_STATE = {
+  sections: [
     {
         title: 'hats',
         // imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
@@ -39,5 +38,52 @@ export const SECTIONS_DATA = [
         id: 5,
         linkUrl: 'shop/mens'
     }
-];
+  ]
+}
+
+const directoryReducer = (state = INITIAL_STATE, action) => {
+  switch(action.type) {
+    default:
+      return state;
+  }
+}
+
+
+export default directoryReducer;
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

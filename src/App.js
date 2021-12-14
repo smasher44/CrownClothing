@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import HeroPage from './pages/hero/hero';
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shop.mainpage';
 import Header from './components/header/header';
@@ -42,9 +43,10 @@ class App extends Component {
     
   render() {
     return (
-      <div>
+      <div className='container'>
         <Header/>
         <Routes>
+          <Route path='/hero' element={<HeroPage/>}/>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/shop' element={<ShopPage/>}/>
           <Route path='/shop/:category' element={<CollectionPage/>}/>
@@ -67,16 +69,3 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
-
-
-
-// this code is for testing
-// const HatsPage = () => (
-//   <div>
-//     <div>
-//       <h1>HATSPAGE</h1>
-//       <span>for testing</span>
-//     </div>
-//   </div>
-// )
-

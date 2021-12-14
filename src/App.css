@@ -1,5 +1,32 @@
-body {
-    padding: 20px 60px;
+.container {
+  margin: 0 auto;
+}
+
+/* General Buttons */
+.btn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 9px;
+  background-color: #636363;
+  
+}
+
+/* Section Buttons */
+.btn:link,
+.btn:hover {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #242424;
+}
+
+.btn-home {
+  transition: all .1s ease;
+}
+
+.btn-home:hover {
+  transform:scale(1.01)
 }
 
 a {

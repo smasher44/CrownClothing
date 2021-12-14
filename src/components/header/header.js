@@ -15,6 +15,11 @@ const Header = ({currentUser, hidden}) => (
     <Link className='log-container' to='/'>
       <Logo className='logo'/>
     </Link>
+    <div className="search">
+      <div className="inner-search">
+        <input type="search" className='srch' placeholder='search'/>
+      </div> 
+    </div>
     <div className='options'>
       <Link className='option' to='/'>HOME</Link>
       <Link className='option' to='/shop'>SHOP</Link>

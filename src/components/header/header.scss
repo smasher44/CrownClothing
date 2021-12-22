@@ -5,12 +5,11 @@
   justify-content: space-between;
 
   .logo-container {
-    height: 100%;
-    width: 70px;
-    
-    .logo {
-     padding: 30px; 
-    }
+    padding-left: 15px;
+    padding-top: 5px;
+    // .logo {
+    //  padding: 30px; 
+    // }
   }
 
   .options {
@@ -45,6 +44,11 @@
         margin-top: 8px;
         width: 350px;
         padding: 10px 30px;
+      }
+
+      .srch:focus {
+        outline: none;
+        // box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
       }
       
     }

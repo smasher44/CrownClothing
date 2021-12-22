@@ -1,0 +1,30 @@
+.nav {
+  font-size: 13px;
+  background-color: #343a40;
+  color: white;
+  text-align:start;
+  grid-row: 1/-1;
+
+  .inner-nav ul {
+    width: 200px;
+    display: inline-block;
+    padding: 0;
+  }
+  .inner-nav ul li {
+    font-size: 16px;
+    // border-radius: 5px;
+    list-style: none;
+    padding: 0.5px;
+    padding-left: 40px;
+  }
+  
+  .inner-nav ul li:hover {
+    cursor: pointer;
+    background-color: #636363;
+    transition: color .30s ease-in-out, background-color .30s ease-in-out,border-color .30s ease-in-out;
+    border-right: 4px solid #b8b2b2;
+  }
+}
+
+
+

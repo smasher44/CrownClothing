@@ -1,0 +1,46 @@
+.mainpage-container {
+  color: #333;
+  font-size: 20px;
+  height: 100vh;
+  text-align: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 200px 1fr 1fr 280px;
+  grid-template-rows: 400px 300px 300px 300px;
+}
+
+.section-1 {
+  background-color: #e9ecef;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.section-2 {
+  background-color: #e9ecef;
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.section-3 {
+  background-color: #e9ecef;
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.section-4 {
+  background-color: #e9ecef;
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.section-5 {
+  background-color: #e9ecef;
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.sale {
+  background-color: #e9ecef;
+  grid-column: 4/-1;
+  grid-row: 1/-1;
+}

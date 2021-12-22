@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import HeroPage from './pages/hero/hero';
-import HomePage from './pages/homepage/homepage';
+import MainPage from './pages/mainpage/mainpage';
 import ShopPage from './pages/shop/shop.mainpage';
 import Header from './components/header/header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
@@ -46,8 +46,8 @@ class App extends Component {
       <div className='container'>
         <Header/>
         <Routes>
+          <Route path='/' element={<MainPage/>}/>
           <Route path='/hero' element={<HeroPage/>}/>
-          <Route path='/' element={<HomePage/>}/>
           <Route path='/shop' element={<ShopPage/>}/>
           <Route path='/shop/:category' element={<CollectionPage/>}/>
           <Route path='/signin' element={<SignInAndSignUpPage/>}/>

@@ -24,6 +24,7 @@ class App extends Component {
         if(userAuth) {
           const userRef = await createUserProfileDocument(userAuth);
           onSnapshot(userRef, snapShot => {
+            //setCurrentUser retrieves the data stored in specified reference
             setCurrentUser({
                 id: snapShot.id,
                 ...snapShot.data() /* data here is in reference to all 

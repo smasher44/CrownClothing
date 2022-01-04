@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc} from "firebase/firestore";
 
 const firebaseConfig = { // these properties are given by the firebase
   apiKey: "AIzaSyBo8coHfZlrghmoAsHb7bKpOVdTgV5seoU",
@@ -18,23 +18,23 @@ export const auth = getAuth(firebase);
 export const firestore = getFirestore(firebase);
 
 export const createUserProfileDocument = async ( userAuth, additionalData ) => {
-  if (!userAuth) return; // if userAuth is null you get out with this function
-  //console.log('useAuth',userAuth)
-  const userRef = doc(firestore,`users/${userAuth.uid}`);
-  const snapShot = await getDoc(userRef);
-  //console.log('snapShot', snapShot)
-  if(!snapShot.exists()) {
-    const { displayName, email } = userAuth;
-    const createdAt = new Date();
-    console.log('check', displayName)
-    try {
-      await setDoc(userRef, { displayName, email, createdAt, ...additionalData})
-    } catch (error) {
-      console.log('error creating user', error.message);
+    if (!userAuth) return; // if userAuth is null you get out with this function
+    //console.log('useAuth',userAuth)
+    const userRef = doc(firestore,`users/${userAuth.uid}`);
+    const snapShot = await getDoc(userRef);
+    //console.log('snapShot', snapShot)
+    if(!snapShot.exists()) {
+      const { displayName, email } = userAuth;
+      const createdAt = new Date();
+      //console.log('check', displayName)
+      try {
+        await setDoc(userRef, { displayName, email, createdAt, ...additionalData})
+      } catch (error) {
+        console.log('error creating user', error.message);
+      }
     }
-  }
-  return userRef;
-};
+    return userRef;
+  };
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({

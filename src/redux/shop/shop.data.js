@@ -279,6 +279,171 @@ const SHOP_DATA = [
           price: 25
         }
       ]
+    },
+    {
+      id: 6,
+      title: 'Kids',
+      routeName: 'kids',
+      items: [
+        {
+          id: 36,
+          name: 'Bleeding Edge',
+          imageUrl: "/images/shop-img/kids/bleeding-edge.png",
+          price: 14
+        },
+        {
+          id: 37,
+          name: 'Bleeding Heart',
+          imageUrl: "/images/shop-img/kids/bleeding-heart.png",
+          price: 22
+        },
+        {
+          id: 38,
+          name: 'Fuschia Pink',
+          imageUrl: "/images/shop-img/kids/fuschia-pink.png",
+          price: 17
+        },
+        {
+          id: 39,
+          name: 'Morning Glory',
+          imageUrl: "/images/shop-img/kids/morning-glory.png",
+          price: 22
+        },
+        {
+          id: 40,
+          name: 'Pandan Breeze',
+          imageUrl: "/images/shop-img/kids/pandan-breeze.png",
+          price: 22
+        },
+        {
+          id: 41,
+          name: 'Sunshine Pearl',
+          imageUrl: "/images/shop-img/kids/sunshine-pearl.png",
+          price: 20
+        },
+        {
+          id: 42,
+          name: 'Thunder Blue',
+          imageUrl: "/images/shop-img/kids/thunder-blue.png",
+          price: 20
+        },
+        {
+          id: 43,
+          name: 'White Blizzard',
+          imageUrl: "/images/shop-img/kids/white-blizzard.png",
+          price: 25
+        },
+        {
+          id: 44,
+          name: 'Winter Beanie',
+          imageUrl: "/images/shop-img/kids/winter-beanie.png",
+          price: 25
+        },
+        {
+          id: 45,
+          name: 'Winter Bee',
+          imageUrl: "/images/shop-img/kids/winter-bee.png",
+          price: 20
+        },
+      ]
+    },
+    {
+      id: 7,
+      title: 'Sandals',
+      routeName: 'sandals',
+      items: [
+        {
+          id: 46,
+          name: 'Havanah Brown',
+          imageUrl: "/images/shop-img/sandals/havanah-brown.png",
+          price: 35
+        },
+        {
+          id: 47,
+          name: 'Kusharta Rage',
+          imageUrl: "/images/shop-img/sandals/kusharta-rage.png",
+          price: 35
+        },
+        {
+          id: 48,
+          name: 'Leaf Green',
+          imageUrl: "/images/shop-img/sandals/leaf-green.png",
+          price: 30
+        },
+        {
+          id: 49,
+          name: 'Powder Blue',
+          imageUrl: "/images/shop-img/sandals/powder-blue.png",
+          price: 30
+        },
+        {
+          id: 50,
+          name: 'Shard Wave',
+          imageUrl: "/images/shop-img/sandals/shard-wave.png",
+          price: 35
+        },
+        {
+          id: 51,
+          name: 'Sky Blue',
+          imageUrl: "/images/shop-img/sandals/sky-blue.png",
+          price: 25
+        },
+        {
+          id: 52,
+          name: 'Yokowa Breeze',
+          imageUrl: "/images/shop-img/sandals/yokawa-breeze.png",
+          price: 25
+        },
+      ]
+    },
+    {
+      id: 8,
+      title: 'Elders',
+      routeName: 'elders',
+      items: [
+        {
+          id: 53,
+          name: 'Austin Breeze T-shirt',
+          imageUrl: "/images/shop-img/elders/austin-breeze.png",
+          price: 25
+        },
+        {
+          id: 54,
+          name: 'Bradford Zhak Polo',
+          imageUrl: "/images/shop-img/elders/bradford-zhak.png",
+          price: 34
+        },
+        {
+          id: 55,
+          name: 'Casual Havanah',
+          imageUrl: "/images/shop-img/elders/casual-havanah.png",
+          price: 40
+        },
+        {
+          id: 56,
+          name: 'Casual Retro',
+          imageUrl: "/images/shop-img/elders/casual-retro.png",
+          price: 25
+        },
+        {
+          id: 57,
+          name: 'Dark Winter',
+          imageUrl: "/images/shop-img/elders/dark-winter.png",
+          price: 35
+        },
+        {
+          id: 58,
+          name: 'Motor Davis Polo',
+          imageUrl: "/images/shop-img/elders/motor-davis.png",
+          price: 30
+        },
+        {
+          id: 59,
+          name: 'Spring Breeze',
+          imageUrl: "/images/shop-img/elders/spring-breeze.png",
+          price: 30
+        },
+      ]
     }
   ];
   

@@ -10,10 +10,11 @@ import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
-const Header = ({currentUser, hidden}) => (
-  <div className='header'>
+const Header = ({currentUser, hidden}) => {
+  return(
+  <div className='header sticky'>
     <Link className='logo-container' to='/'>
-      <img src={spectre} alt="spectre logo" height="60px"/>
+      <img src={spectre} alt="spectre logo" height="60px"/> 
     </Link>
     <div className="search">
       <div className="inner-search">
@@ -35,8 +36,9 @@ const Header = ({currentUser, hidden}) => (
     {
       hidden ? null : <CartDropdown/>
     }
-  </div>  
-)
+  </div>
+  )  
+}
 
 const mapStateToProps = createStructuredSelector({
   currentUser:selectCurrentUser, 

@@ -6,6 +6,9 @@ const COLLECTION_ID_MAP = {
   jackets:3,
   womens:4,
   mens:5,
+  kids:6,
+  sandals:7,
+  elders:8,
 }
 
 const selectShop = state => state.shop;

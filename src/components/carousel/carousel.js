@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './carousel.scss';
 
-const Carousel = () => {
+class Carousel extends Component {
+  constructor(){
+    super();
+    this.state = {
+      itemClassName: "carousel__photo",
+      items: document.getElementsByClassName("carousel__photo"),
+      totalItems: 4,
+      slide: 0,
+      moving:  true,
+    };
+  }
+  render() {
+  console.log(this.state.items)
   return ( //
-    <div className="mainpage-image" style={{backgroundImage:`url(/images/carousel-img/carousel-img-1.jpg)`}}>
-        <button className="carousel-btn carousel-btn-left">
+    <div className="mainpage-image">
+      <div className="carousel">
+          <img className="carousel__photo initial" 
+            style={{backgroundImage:`url(/images/carousel-img/carousel-img-1.jpg)`}} 
+            alt=""/>
+          <img className="carousel__photo" 
+            style={{backgroundImage:`url(/images/carousel-img/carousel-img-2.jpg)`}} 
+            alt=""/>
+          <img className="carousel__photo" 
+            style={{backgroundImage:`url(/images/carousel-img/carousel-img-3.jpg)`}} 
+            alt=""/>
+          <img className="carousel__photo" 
+            style={{backgroundImage:`url(/images/carousel-img/carousel-img-2.jpg)`}} 
+            alt=""/>
+      </div>
+  
+      <button className="carousel-btn carousel-btn-left carousel__button--prev">
         <svg
           className="carousel-btn-icon"
           fill="none"
@@ -12,14 +39,14 @@ const Carousel = () => {
           stroke="currentColor"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M15 19l-7-7 7-7"
           />
         </svg>
       </button>
-      <button className="carousel-btn carousel-btn-right">
+      <button className="carousel-btn carousel-btn-right carousel__button--next">
         <svg
           className="carousel-btn-icon"
           fill="none"
@@ -27,9 +54,9 @@ const Carousel = () => {
           stroke="currentColor"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M9 5l7 7-7 7"
           />
         </svg>
@@ -43,7 +70,8 @@ const Carousel = () => {
       </div>
 
     </div> 
-  )
+    )
+  }
 }
 
 

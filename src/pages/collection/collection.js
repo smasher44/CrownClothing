@@ -8,7 +8,7 @@ import { selectCollection } from '../../redux/shop/shop.selectors';
 const CollectionPage = () => {
   let params = useParams();
   const collection = useSelector(selectCollection(params.category.toLowerCase()))
-  // console.log('debug collection:', collection)
+  console.log('debug collection:', collection)
   return (  
     <div className='collection-page'>
       <h2 className='title'>{params.category.toUpperCase()}</h2>

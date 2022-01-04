@@ -1,5 +1,6 @@
 .container {
   margin: 0 auto;
+  margin-top: 70px;
 }
 
 /* General Buttons */
@@ -34,6 +35,3 @@ a {
     color:black;
 }  
 
-* {
-    box-sizing: border-box;
-}

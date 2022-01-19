@@ -9,7 +9,7 @@ const CollectionPreview = ({title,routeName, items}) => {
   <div className='collection-preview'>
     <h1 className='title' onClick={() => navigate(`/shop/${routeName}`)}>{title.toUpperCase()}</h1>
     <div className='preview'>
-        {items.filter((item, idx) => idx < 4 )
+        {items.filter((item, idx) => idx < 5 )
               .map((item) => ( 
             <CollectionItem key={item.id} item={item}/>
             // note: item = {id,name,imageUrl,price}

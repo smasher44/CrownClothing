@@ -13,8 +13,7 @@
   font-weight: 600;
   font-size: 14px;
 
-  &::after {
-    content: "NEW COLLECTION";
+  .collection-item-banner {
     position: absolute;
     top: 6%;
     right: -10%;
@@ -25,6 +24,24 @@
     color: white;
     transform: rotate(45deg);
   }
+  .collection-item-banner-none {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .onsale-banner {
+    position: absolute;
+    height: 63px;
+    width: 90px;
+    top: 0;
+    left: -12px;
+  }
+
+  .onsale-banner-none {
+    visibility: hidden;
+    position: absolute;
+  }
+
 
   .image {
     height:300px; 

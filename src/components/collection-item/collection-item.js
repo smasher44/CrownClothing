@@ -4,12 +4,12 @@ import './collection-item.scss';
 import { addItem } from '../../redux/cart/cart.actions';
 
 const CollectionItem = ({item, addItem}) => {
-  const { name, price, imageUrl } = item;
+  const { name, price, imageUrl, newCollection, onSale } = item;
   return (
     <div className='collection-item'>
-      <div className='image'
-          style={{backgroundImage: `url(${imageUrl})`}}
-      />
+      <div className={` ${newCollection ? 'collection-item-banner' : 'collection-item-banner-none'} `}>NEW COLLECTION</div>
+      <img className={` ${onSale ? 'onsale-banner' : 'onsale-banner-none'} `} src={`/images/onsale.png`} alt='banner'/>
+      <div className='image' style={{backgroundImage:`url(${imageUrl})`}}/>
       <div className="content">
       <div className="content-title">
         <span>{name}</span>

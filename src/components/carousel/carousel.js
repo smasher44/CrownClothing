@@ -17,17 +17,17 @@ class Carousel extends Component {
   return ( //
     <div className="mainpage-image">
       <div className="carousel">
-          <img className="carousel__photo initial" 
-            style={{backgroundImage:`url(/images/carousel-img/carousel-img-1.jpg)`}} 
+          <img className="image-temporary" 
+            src={`/images/carousel-img/carousel-img-1.jpg`} 
+            alt="clothes"/>
+          <img className="carousel__photo" 
+            style={{backgroundImage:`url(/images/carousel-img/carousel-img-2.png)`}} 
             alt=""/>
           <img className="carousel__photo" 
-            style={{backgroundImage:`url(/images/carousel-img/carousel-img-2.jpg)`}} 
+            style={{backgroundImage:`url(/images/carousel-img/carousel-img-3.png)`}} 
             alt=""/>
           <img className="carousel__photo" 
-            style={{backgroundImage:`url(/images/carousel-img/carousel-img-3.jpg)`}} 
-            alt=""/>
-          <img className="carousel__photo" 
-            style={{backgroundImage:`url(/images/carousel-img/carousel-img-2.jpg)`}} 
+            style={{backgroundImage:`url(/images/carousel-img/carousel-img-2.png)`}} 
             alt=""/>
       </div>
   

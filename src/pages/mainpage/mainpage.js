@@ -1,8 +1,9 @@
 import React from 'react';
+import './mainpage.scss';
 import Navigation from '../../components/navigation/navigation';
 import Carousel from '../../components/carousel/carousel';
-import './mainpage.scss';
 import MenuItem from '../../components/menu-item/menu-item';
+import OnSale from '../../components/on-sale/on-sale';
 
 import { connect } from 'react-redux'; 
 import { selectDirectorySections } from '../../redux/directory/directory.selectors';
@@ -16,7 +17,7 @@ const MainPage = ({ sections }) => {
       {sections.map( ({id,title,imageUrl, linkUrl}) => (
         <MenuItem key={id} title={title} imageUrl={imageUrl} linkUrl={linkUrl}/>
       ))}
-      <div className="sale">Sales</div>  
+      <OnSale/>
     </div>
   )
 }

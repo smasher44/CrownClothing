@@ -5,6 +5,13 @@
   text-align:start;
   grid-row: 1/-1;
 
+  .navigation-title {
+    font-size: 18px;
+    padding: 2px 5px;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
   .inner-nav ul {
     width: 200px;
     display: inline-block;

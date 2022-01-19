@@ -7,7 +7,7 @@ function Navigation() {
   const navigate = useNavigate();
   return(
     <div className="nav">
-      <div className="title"> Categories</div>
+      <div className="navigation-title">CATEGORIES</div>
         <div className="inner-nav">
           <ul>
             <li><p onClick={() => navigate("shop/hats")}>Hats</p></li>

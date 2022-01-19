@@ -1,0 +1,90 @@
+.onsale__section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.onsale__card {
+  font-size: 14px;
+  position: relative;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  height: 160px;
+  width: 300px;
+  display: flex;
+  text-align: start;
+}
+.onsale__card-img {
+  border-radius: 5px;
+  height: 120px;
+  width: 120px;
+  margin: 5px;
+  object-fit: cover;
+}
+.onsale__card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-group{
+  display: flex;
+  justify-content: center;
+}
+
+.content-title {
+  font-size: 18px;
+  padding: 2px 5px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.content-description {
+  padding: 2px 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.button {
+  color: white;
+  border-radius: 10px;
+  background-color: #4285f4;
+  /* background-color: #5c5c5c; */
+  margin-top: 8px;
+  padding: 8px 20px;
+  text-align: center;
+  font-weight: 400;
+  width: 80%;
+  margin-left: 11px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #2476fa;
+  box-shadow: 0 6px 3px rgba(41, 41, 41, 0.212);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0.5px);
+  box-shadow: 0 2px 3px rgba(33, 33, 33, 0.473);
+}
+
+.banner {
+  position: absolute;
+  padding: 2px 5px;
+  background-color: rgb(210, 51, 30);
+  color: white;
+  font-weight: 600;
+}
+
+.shipping {
+  font-size: 11px;
+  color: rgb(116, 116, 116);
+  padding-left: 5px;
+}
+
+.content-price-bold {
+  font-size: 18px;
+  padding: 0 6px 0 0;
+}

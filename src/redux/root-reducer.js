@@ -14,7 +14,7 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  user: userReducer, // "user" is a property that points to userReducer
   cart: cartReducer,
   directory: directoryReducer,
   shop: shopReducer

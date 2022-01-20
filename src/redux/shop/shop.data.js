@@ -13,6 +13,7 @@ const SHOP_DATA = [
           price: 25,
           newCollection: false,
           onSale: true
+          
         },
         {
           id: 2,

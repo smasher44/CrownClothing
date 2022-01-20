@@ -12,24 +12,24 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { onSnapshot } from "firebase/firestore";
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
-import { createStructuredSelector } from 'reselect'; 
-import { selectCurrentUser } from './redux/user/user.selectors'
+//import { createStructuredSelector } from 'reselect'; 
+//import { selectCurrentUser } from './redux/user/user.selectors'
 
 class App extends Component {
     unsubscribeFromAuth = null;
     
     componentDidMount() {
-      const { setCurrentUser } = this.props;
+      const { setCurrentUser } = this.props; 
       this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
         if(userAuth) {
           const userRef = await createUserProfileDocument(userAuth);
           onSnapshot(userRef, snapShot => {
             //setCurrentUser retrieves the data stored in specified reference
             setCurrentUser({
-                id: snapShot.id,
-                ...snapShot.data() /* data here is in reference to all 
-                parameters we set in the firestore database (displayName,
-                email,createdAt,...etc) */
+              id: snapShot.id,
+              ...snapShot.data() /* data here is in reference to all 
+              parameters we set in the firestore database (displayName,
+              email,createdAt,...etc) */
             });
           });
         } else {
@@ -61,12 +61,12 @@ class App extends Component {
 }
 
  
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
-})
+// const mapStateToProps = createStructuredSelector({
+//   currentUser: selectCurrentUser
+// })
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(null,mapDispatchToProps)(App);

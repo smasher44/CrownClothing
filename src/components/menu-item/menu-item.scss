@@ -1,7 +1,9 @@
 .menu-item2 {
   height: 300px;
   border: 1px solid black;
-  cursor: pointer;
+  // cursor: pointer;
+  overflow: hidden;
+  position: relative;
 
   .background-image2 {
     width: 100%;
@@ -9,4 +11,46 @@
     background-position: center;
     background-size: cover;
   }
+
+  &:hover {
+    cursor: pointer;
+  
+    & .background-image2 {
+      transform: scale(1.1);
+      transition: 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  
+    & .content {
+      // opacity: 0.9;
+    }
+  }
+
+  .content {
+    height: 90px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    opacity: 0.6;
+    position: absolute;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 22px;
+      color: #4a4a4a;
+    }
+
+    .subtitle {
+      font-weight: lighter;
+      font-size: 16px;
+    }
+  }
+
 }

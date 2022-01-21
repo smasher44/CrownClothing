@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: #ffffff;
 }
 
 .onsale__card {
@@ -77,6 +78,19 @@
   background-color: rgb(210, 51, 30);
   color: white;
   font-weight: 600;
+}
+
+.onsale-banner {
+  position: absolute;
+  height: 48px;
+  width: 68px;
+  top: 0;
+  left: -12px;
+}
+
+.onsale-banner-none {
+  visibility: hidden;
+  position: absolute;
 }
 
 .shipping {

@@ -12,20 +12,20 @@ const OnSaleItem = ({item, addItem}) => {
     <div>
       <img className="onsale__card-img" src={`/images/onsale-img/sale-img-1.jpg`} alt='women'/>
       <div className="price-group">
-        <div className="content-price-bold"><strong style={{color:"rgb(2, 121, 213)"}}>{ price }</strong></div>
+        <div className="content-price-bold"><strong style={{color:"rgb(2, 121, 213)"}}>₱{ price }</strong></div>
         <div style={{color:"rgb(177, 177, 177)"}}><strike>39</strike></div>
         <div style={{color:"rgb(255, 30, 30)"}}>35% off</div>
       </div>
     </div>
     <div className="onsale__card-content">
         <span className="content-title">{name}</span>
-        <div className="content-description">Get limited edition of jordan air,
+        <div className="content-description">Get limited edition of this item,
           be classy while using a legendary brand.
         </div>
         <div className="shipping">Free Shipping</div>
         <span className="button" onClick={()=> addItem(item)}>Buy Now</span>
     </div>
-    <div className="banner">SALE</div>
+    <img className={` ${onSale ? 'onsale-banner' : 'onsale-banner-none'} `} src={`/images/onsale.png`} alt='banner'/>
   </div> ) : null
   )
 }

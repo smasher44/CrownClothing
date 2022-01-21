@@ -31,8 +31,8 @@
 
   .onsale-banner {
     position: absolute;
-    height: 63px;
-    width: 90px;
+    height: 48px;
+    width: 68px;
     top: 0;
     left: -12px;
   }
@@ -69,11 +69,12 @@
     font-weight: 400;
   }
   
+  
   .button:hover {
     cursor: pointer;
-    transform: translateY(-0.5px);
     background-color: #2476fa;
     box-shadow: 0 6px 3px rgba(41, 41, 41, 0.212);
+    transform: translateY(-1px);
   }
   
   .button:active {

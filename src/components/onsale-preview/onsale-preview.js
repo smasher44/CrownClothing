@@ -5,12 +5,11 @@ import OnSaleItem from '../onsale-item/onsale-item';
 const OnSalePreview = ({items}) => {
   return (
     <div className="onsale__section sale">
-    <div>FLASH SALE</div>
-    <div>
-      <div>Categories</div>
-      <div>Ends in:</div>
-    </div>
-
+    <div className='flashsale-header'>FLASH SALE</div>
+    {/* <div>
+      <div style={{visibility:"hidden"}}>Categories</div>
+      <div style={{visibility:"hidden"}}>Ends in:</div>
+    </div> */}
     {items.filter((item, idx) => idx < 13 )
           .map((item) => ( 
         <OnSaleItem key={item.id} item={item}/>

@@ -5,12 +5,13 @@ import { addItem } from '../../redux/cart/cart.actions';
 
 const OnSaleItem = ({item, addItem}) => {
   // const {id,name,imageUrl,price,newCollection,onSale}} = item;
-  const { name, price , onSale } = item;
+  const { name, price , onSale, imageUrl } = item;
   console.log(item)
   return ( onSale ? 
     (<div className="onsale__card">
     <div>
-      <img className="onsale__card-img" src={`/images/onsale-img/sale-img-1.jpg`} alt='women'/>
+      {/* <img className="onsale__card-img" src={`/images/onsale-img/sale-img-1.jpg`} alt='women'/> */}
+      <img className="onsale__card-img" src={`${imageUrl}`} alt='women'/>
       <div className="price-group">
         <div className="content-price-bold"><strong style={{color:"rgb(2, 121, 213)"}}>₱{ price }</strong></div>
         <div style={{color:"rgb(177, 177, 177)"}}><strike>39</strike></div>
@@ -23,7 +24,7 @@ const OnSaleItem = ({item, addItem}) => {
           be classy while using a legendary brand.
         </div>
         <div className="shipping">Free Shipping</div>
-        <span className="button" onClick={()=> addItem(item)}>Buy Now</span>
+        <span className="button" onClick={()=> addItem(item)}>Add to Cart</span>
     </div>
     <img className={` ${onSale ? 'onsale-banner' : 'onsale-banner-none'} `} src={`/images/onsale.png`} alt='banner'/>
   </div> ) : null

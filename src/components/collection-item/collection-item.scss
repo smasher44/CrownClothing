@@ -90,6 +90,11 @@
     display: flex;
     padding: 0 5px;
     margin-top: 4px;
+
+    .collection-item-shipping {
+      margin-top: 5px;
+      margin-left: 10px;
+    }
   }
   
   .content-price:last-child {

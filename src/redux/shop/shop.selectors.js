@@ -11,7 +11,9 @@ const COLLECTION_ID_MAP = {
   elders:8,
 }
 
-const selectShop = state => state.shop;
+const selectShop = state => state.shop; 
+/* the "shop" here is reference in the shop:shopReducer in the root reducer 
+which means that this is the property that will reference to the recieve state*/
 
 export const selectCollections = createSelector(
   [selectShop],

@@ -16,10 +16,13 @@ const CollectionItem = ({item, addItem}) => {
       </div>
       <div className="content-price">
         <div className="content-price-bold"><strong style={{color:`rgb(2, 121, 213)`}}>₱{price}</strong></div>
-        <div className="content-price-percent">
-          <div style={{color:`rgb(177, 177, 177)`}}><strike>₱78</strike></div>
-          <div style={{color:`rgb(255, 30, 30)`}}>35% off</div>
-        </div>
+        { onSale ? 
+          ( <div className="content-price-percent">
+              <div style={{color:`rgb(177, 177, 177)`}}><strike>₱78</strike></div>
+              <div style={{color:`rgb(255, 30, 30)`}}>35% off</div>
+            </div>
+          ) : <div className="collection-item-shipping">Free Shipping</div>
+        }
       </div>
     </div>
     <span onClick={()=> addItem(item)} className="button">Add to Cart</span>

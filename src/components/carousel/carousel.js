@@ -13,7 +13,7 @@ class Carousel extends Component {
     };
   }
   render() {
-  console.log(this.state.items)
+  // console.log(this.state.items)
   return ( //
     <div className="mainpage-image">
       <div className="carousel">

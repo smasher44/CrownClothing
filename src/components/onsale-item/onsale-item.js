@@ -6,7 +6,7 @@ import { addItem } from '../../redux/cart/cart.actions';
 const OnSaleItem = ({item, addItem}) => {
   // const {id,name,imageUrl,price,newCollection,onSale}} = item;
   const { name, price , onSale, imageUrl } = item;
-  console.log(item)
+  // console.log(item)
   return ( onSale ? 
     (<div className="onsale__card">
     <div>

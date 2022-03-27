@@ -1,3 +1,3 @@
 # CrownClothing
 E-Commerce App
-Recently did major changes in the react-routing 
+Recently did minr changes in the react-routing 
